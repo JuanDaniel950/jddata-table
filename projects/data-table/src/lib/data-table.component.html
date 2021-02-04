@@ -1,0 +1,32 @@
+<div>
+    <div class="col">
+        <h3 class="text-center">{{title}}</h3>
+    </div>
+    <!-- <form>
+        <div class="form-group form-inline">
+           {{labelSearch}} <input class="form-control ml-2" type="text" [formControl]="filter"/>
+        </div>
+      </form> -->
+      
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col" *ngFor="let column of columnsName">{{column}}</th>
+          <th scope="col" *ngIf="viewMore">Ver más</th>
+         
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let data of dataTable index as i">
+          <th scope="row">{{ i + 1 }}</th>
+          <td *ngFor="let item of dataColumns">
+            {{data[item]}}
+          </td>
+          <!-- <td><ngb-highlight [result]="data.descriptionUser" [term]="filter.value"></ngb-highlight></td>
+          <td><ngb-highlight [result]="data.creationDate | date:'medium'" [term]="filter.value"></ngb-highlight></td> -->
+          <td *ngIf="viewMore" class="viewMore"><a (click)="vewMoreDetails(data)">Ver Más </a></td>
+        </tr>
+        </tbody>
+      </table>
+</div>

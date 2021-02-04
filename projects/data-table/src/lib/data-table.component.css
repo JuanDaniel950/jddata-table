@@ -1,0 +1,7 @@
+.viewMore{
+    cursor: pointer;
+}
+
+.viewMore:hover{
+    color: #2070bb;
+}
